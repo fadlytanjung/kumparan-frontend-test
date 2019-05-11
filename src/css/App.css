@@ -1,0 +1,171 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.p-t-20{
+    padding-top:20px;
+}
+
+.p-r-0{
+    padding-right:0px;
+}
+.p-0,.leftside,.rightside{
+    padding:0px;
+}
+.p-b-10{
+    padding-bottom:10px;
+}
+.p-l-10{
+    padding-left:10px;
+}
+.p-l-15{
+    padding-left:15px;
+}
+
+.p-t-80{
+    padding-top:70px;
+}
+.p-10{
+    padding:10px;
+}
+
+.font-sm{
+    font-size: 12px;
+}
+.border-bottom{
+    border-bottom:1px solid #333;
+}
+
+.total-post,.number-total{
+    padding-left: 15px;
+    margin:0px;
+}
+
+.total-post{
+    color:#657786;
+    font-weight:bold;
+    font-size:12px;
+    padding-top:15px;
+}
+
+.number-total{
+    font-weight: bold;
+    font-size:18px;
+    color:#0084B4 !important;
+    padding-bottom: 10px;
+    font-family: Roboto;
+}
+body{
+    background: #e6ecf0;
+}
+
+.bg-red{
+    background: red;
+}
+
+.min-height-250{
+    min-height: 250px;
+    background: #333;
+}
+
+.container-right,.container-left{
+    background: #ffffff;
+    min-height: 200px;
+}
+.timeline{
+    background: #ffffff;
+    width:100%;
+    min-height:500px;
+    padding-bottom:0px;
+}
+.container-post{
+    background:#E5F2F7;
+}
+
+.btn-post{
+    background: #0084B4;
+}
+
+.userpic{
+    border-radius:90%;
+    border:3px solid #ffffff;
+    position:absolute;
+    top:-40px;left:25px;
+}
+
+.name-user{
+    margin:0px;
+    color:#000;
+    padding-left: 20px;
+}
+
+.email-user{
+    margin:0px;
+    color:#333;
+    font-size:12px;
+    padding-left: 20px;
+}
+.link-hover{
+    text-decoration: none !important;
+    color:#66757f;
+    
+}
+/* post css */
+.post-content,.comment-content{
+    padding:10px;
+    padding-bottom:20px;
+    position: relative;
+}
+.post-content{
+    border-bottom:1px solid rgba(0,0,0,0.2);
+}
+
+.title-comment{
+    margin:0px;
+    font-size: 14px;
+}
+
+.title-post,.body-post{
+    margin:0px;
+}
+
+.title-post{
+    font-weight: bold;
+    font-size:14px;
+}
+
+.body-post{
+    font-weight: 500;
+    font-size:13px;
+}
+
+.detail-post{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    padding-top:2px;
+    padding-left:2px;
+    padding-right:5px;
+    padding-bottom:2px;
+    font-size: 10px;
+    background: #657786;
+    border-color:#657786;
+}
+
+.link-hover:hover{
+    border-bottom:2px solid #0084B4;
+    padding-bottom: 17px;
+}
+
+.footer-font{
+    font-size: 15px;
+    color:#66757f;
+    padding-top: 10px;
+}
+@media only screen and (max-width:999px){
+    .leftside,.rightside{
+        padding-left:10px;
+        padding-right:10px;
+    }
+}
