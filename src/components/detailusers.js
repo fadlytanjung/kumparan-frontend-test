@@ -1,34 +1,11 @@
 import React, { Component } from 'react';
-import { PATH_BASE} from '../api';
+// import { PATH_BASE} from '../api';
 import { Table} from 'react-bootstrap';
+import { connect } from 'react-redux';
 import '../css/App.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 class detailusers extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: this.props.match.params.id,
-            user:[],
-            address:[],
-            geo:[],
-            company:[],
-         }
-    }
-
-    componentDidMount(){
-        axios.get(`${PATH_BASE}users/${this.state.id}`)
-        .then((response)=>{
-
-            const user = response.data;
-            const address = response.data.address
-            const geo = response.data.address.geo
-            const company = response.data.company
-            console.log(user)
-            this.setState({user,address,geo,company})
-            
-        });
-    }
 
     render(){
         return(
@@ -38,38 +15,38 @@ class detailusers extends Component{
                     <tbody>
                         <tr>
                             <td>Name</td>
-                            <td>: {this.state.user.name}</td>
+                            <td>: {this.props.users.name}</td>
                         </tr>
                         <tr>
                             <td>Username</td>
-                            <td>: {this.state.user.username}</td>
+                            <td>: {this.props.users.username}</td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>: {this.state.user.email}</td>
+                            <td>: {this.props.users.email}</td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>: {this.state.user.phone}</td>
+                            <td>: {this.props.users.phone}</td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>: {this.state.address.street+' '} 
-                            {this.state.address.suite+', '} 
-                            {this.state.address.city+' - '}
-                            {this.state.address.zipcode+' | '}
-                            Lat {this.state.geo.lat}, Long {this.state.geo.long} 
+                            <td>: {this.props.users.address.street+' '} 
+                            {this.props.users.address.suite+', '} 
+                            {this.props.users.address.city+' - '}
+                            {this.props.users.address.zipcode+' | '}
+                            Lat {this.props.users.address.geo.lat}, Long {this.props.users.address.geo.lng} 
                             </td>
                         </tr>
                         <tr>
                             <td>Website</td>
-                            <td>: {this.state.user.website}</td>
+                            <td>: {this.props.users.website}</td>
                         </tr>
                         <tr>
                             <td>Company</td>
-                            <td>: {this.state.company.name+' | '} 
-                            {this.state.company.bs+' | '} 
-                            {this.state.company.catchPhrase} 
+                            <td>: {this.props.users.company.name+' | '} 
+                            {this.props.users.company.bs+' | '} 
+                            {this.props.users.company.catchPhrase} 
                             </td>
                         </tr>
                     </tbody>
@@ -81,5 +58,11 @@ class detailusers extends Component{
         )
     }
 }
+const mapStateToProps = (state,ownProps)=>{
+    let id = ownProps.match.params.id;
+    return {
+        users:state.data.users.find(post=>post.id===Number(id))
+    }
+}
 
-export default detailusers;
+export default connect(mapStateToProps)(detailusers);

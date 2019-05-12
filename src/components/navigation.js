@@ -5,7 +5,17 @@ import logo from '../sources/logo.svg';
 import '../css/App.css';
 
 class navigation extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            class:'activate',
+         }
+    }
+
+   
     render(){
+       
         return(
            
             <Navbar bg="light" expand="lg" className='border-bottom' fixed='top'>
@@ -21,7 +31,7 @@ class navigation extends Component{
                     <Nav className="mr-auto">
                         
                         <div className='nav-link'>
-                        <NavLink to="/" className='link-hover'><i className='fa fa-home'></i> Home
+                        <NavLink to="/" className='link-hover '><i className='fa fa-home'></i> Home
                         </NavLink>
                         </div>
                         <div className='nav-link'>

@@ -9,6 +9,7 @@ import post from './post';
 import users from './users';
 import detailusers from './detailusers';
 import albums from './albums';
+import detailalbums from './detailalbums';
 import error from './error';
 
 class dashboard extends Component{
@@ -38,7 +39,7 @@ class dashboard extends Component{
                         </div>
                         
                     </Col>
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={7}>
                         <div className='timeline p-b-10'>
                         <Switch>
                             <Route exact path="/"component={post}></Route>
@@ -46,17 +47,13 @@ class dashboard extends Component{
                             <Route path="/users" component={users} ></Route>
                             <Route path="/user/:id" component={detailusers} ></Route>
                             <Route path="/albums" component={albums} ></Route>
+                            <Route path="/album/:id" component={detailalbums} ></Route>
                             <Route component={error} ></Route>
                         </Switch>
                         </div>
                         <p className='text-center footer-font'>
                             <b>MFT</b> 2019 &copy; - All reserved
                         </p>
-                    </Col>
-                    <Col xs={12} md={3} className='rightside p-b-10'>
-                        <div className='container-right'>
-                        ae
-                        </div>
                     </Col>
                 </Row>
             </Container>

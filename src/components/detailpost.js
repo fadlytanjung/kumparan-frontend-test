@@ -3,6 +3,8 @@ import { PATH_BASE} from '../api';
 import { Row,Col,Form,Button} from 'react-bootstrap';
 import '../css/App.css';
 import axios from 'axios';
+import { connect } from 'react-redux';
+
 
 class detailpost extends Component{
     constructor(props) {
@@ -36,8 +38,8 @@ class detailpost extends Component{
         return(
             <div className='timeline p-b-10'>
                 <div className='comment-content' >
-                    <p className='title-post' >Judul</p>
-                    <p className='body-post' >body</p>
+                    <p className='title-post' >{this.props.post.title}</p>
+                    <p className='body-post' >{this.props.post.body}</p>
                 </div>
                 
                 <div className='p-l-10'>comments</div>
@@ -80,4 +82,10 @@ class detailpost extends Component{
     }
 }
 
-export default detailpost;
+const mapStateToProps = (state,ownProps)=>{
+    let id = ownProps.match.params.id;
+    return {
+        post:state.data.posts.find(post=>post.id===Number(id))
+    }
+}
+export default connect(mapStateToProps)(detailpost);

@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
-import { PATH_BASE} from '../api';
 import { Button} from 'react-bootstrap';
 import { Link} from 'react-router-dom';
-import axios from 'axios';
+import { connect } from 'react-redux';
+
 
 class users extends Component{
 
-    constructor(props){
-        super(props);
-        this.state={
-            users : []
-        }
-    }
-
-   
-    componentDidMount(){
-        axios.get(`${PATH_BASE}users`)
-        .then((response)=>{
-            const users = response.data;
-            
-            this.setState({users})
-        })
-        console.log(this.props)
-    }
-
+    
     render(){
         return(
             <div>
             
             <div className='timeline p-b-10'>
-            {this.state.users.map((item,index) =>
+            {this.props.users.map((item,index) =>
                 <div className='post-content' key={item.id}>
                     <p className='title-post' key={item.name}>{item.name}</p>
                     <p className='body-post' key={item.email}>{item.email}</p>
@@ -46,5 +29,10 @@ class users extends Component{
         )
     }
 }
-
-export default users;
+const mapStateToProps = (state) =>{
+    
+    return {
+        users:state.data.users
+    }
+}
+export default connect(mapStateToProps)(users);

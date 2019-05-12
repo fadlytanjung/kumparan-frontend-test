@@ -111,6 +111,17 @@ body{
     color:#66757f;
     
 }
+
+.link-hover:hover{
+    border-bottom:2px solid #0084B4;
+    padding-bottom: 17px;
+}
+
+.activate{
+    border-bottom:2px solid #0084B4 !important;
+    padding-bottom: 17px !important;
+    color: #0084B4 !important;
+}
 /* post css */
 .post-content,.comment-content{
     padding:10px;
@@ -153,9 +164,28 @@ body{
     border-color:#657786;
 }
 
-.link-hover:hover{
-    border-bottom:2px solid #0084B4;
-    padding-bottom: 17px;
+.delete-post{
+    position:absolute;
+    right:60px;
+    bottom:10px;
+    padding-top:2px;
+    padding-left:2px;
+    padding-right:5px;
+    padding-bottom:2px;
+    font-size: 10px;
+}
+
+.m-r-0{
+    margin-right: 0px !important;
+}
+
+.p-t-100{
+    padding-top:100px;
+}
+/* Photo album*/
+.photo-tumb{
+    min-height: 180px;
+    padding-left: 15px;
 }
 
 .footer-font{
